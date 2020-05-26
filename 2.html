@@ -1,0 +1,193 @@
+<html>
+	<head>
+		<title>Button #2</title>
+		<style>
+			body
+			{
+				background: linear-gradient(to bottom right, #FFAFAF 0%, moccasin 20%, lemonchiffon 40%, #B7FFB7 60%, lightblue 80%, #DDBBF1 100%);
+				color: mediumvioletred;
+				font-size: 30;
+				text-align: center;
+				padding: 25;
+				border-style: double;
+				border-color: mediumvioletred;
+			}
+			hr
+			{
+				border-style: none;
+				border-top-style: solid;
+				color: mediumvioletred;
+			}
+			button
+			{
+				color: mediumvioletred;
+				border-color: mediumvioletred;
+				border-style: solid;
+				font-size: 20;
+				width: 75;
+				height: 50;
+				background-color: #FFDFEA;
+			}
+			button:hover
+			{
+				transition: 0.5s;
+				opacity: 75%;
+				background: none;
+			}
+			div
+			{
+				display: inline-block;
+				border-style: solid;
+				border-width: thin;
+				background-color: white;
+				padding: 50;
+				padding-bottom: 25;
+				font-size: 20;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<p>Button #2</p>
+		<hr>
+		<button id="start" onclick="Start()">Start</button>
+		<div id="slides" style="display:none;">
+			<img id="me" src="me.png" style="height:275;">
+			<img id="me-sad" src="me-sad.png" style="height:275; display:none;">
+			<img id="me-happy" src="me-happy.png" style="height:275; display:none;">
+			<img id="scout" src="scout.png" style="height:300; display:none;">
+			<img id="us" src="us.png" style="height:400; display:none;">
+			<img id="us-kiss" src="us-kiss.png" style="height:300; display:none;">
+			<img id="us-hearts" src="us-hearts.png" style="height:300; display:none;">
+			<p id="text-1">This is me!</p>
+			<p id="text-2" style="display:none">This is you!</p>
+			<p id="text-3" style="display:none">This is us!</p>
+			<p id="text-4" style="display:none">We're in love!</p>
+			<p id="text-5" style="display:none">I used to be sad...</p>
+			<p id="text-6" style="display:none">But then you made me happy!</p>
+			<p id="text-7" style="display:none">Sometimes we even kiss!</p>
+			<p id="text-8" style="display:none">We have such a nice realtionship!</p>
+			<p id="text-9a" style="display:none">That's all!</p>
+			<p id="text-9b" style="display:none">I hope you enjoyed!</p>
+			<br><br>
+			<button id="next" onclick="Next()">Next</button>
+			<br id="break1"><br id="break2">
+			<button id="restart" onclick="Restart()" style="width:100;">Restart</button>
+		</div>
+		<br><br>
+		<button onclick="document.location = 'index.html'">Back</button>
+		
+		<script>
+			var slide = 0;
+			
+			function Start()
+			{
+				document.getElementById("start").style.display = "none";
+				document.getElementById("slides").style.display = "";
+				slide = 1;
+			}
+			
+			function Next()
+			{
+				if (slide == 1)
+				{
+					slide = 2;
+					document.getElementById("me").style.display = "none";
+					document.getElementById("scout").style.display = "";
+					document.getElementById("text-1").style.display = "none";
+					document.getElementById("text-2").style.display = "";
+				}
+				else if (slide == 2)
+				{
+					slide = 3;
+					document.getElementById("me").style.display = "";
+					document.getElementById("text-2").style.display = "none";
+					document.getElementById("text-3").style.display = "";
+				}
+				else if (slide == 3)
+				{
+					slide = 4;
+					document.getElementById("me").style.display = "none";
+					document.getElementById("scout").style.display = "none";
+					document.getElementById("us").style.display = "";
+					document.getElementById("text-3").style.display = "none";
+					document.getElementById("text-4").style.display = "";
+				}
+				else if (slide == 4)
+				{
+					slide = 5;
+					document.getElementById("us").style.display = "none";
+					document.getElementById("me-sad").style.display = "";
+					document.getElementById("text-4").style.display = "none";
+					document.getElementById("text-5").style.display = "";
+				}
+				else if (slide == 5)
+				{
+					slide = 6;
+					document.getElementById("me-sad").style.display = "none";
+					document.getElementById("me-happy").style.display = "";
+					document.getElementById("scout").style.display = "";
+					document.getElementById("text-5").style.display = "none";
+					document.getElementById("text-6").style.display = "";
+				}
+				else if (slide == 6)
+				{
+					slide = 7;
+					document.getElementById("me-happy").style.display = "none";
+					document.getElementById("scout").style.display = "none";
+					document.getElementById("us-kiss").style.display = "";
+					document.getElementById("text-6").style.display = "none";
+					document.getElementById("text-7").style.display = "";
+				}
+				else if (slide == 7)
+				{
+					slide = 8;
+					document.getElementById("us-kiss").style.display = "none";
+					document.getElementById("us-hearts").style.display = "";
+					document.getElementById("text-7").style.display = "none";
+					document.getElementById("text-8").style.display = "";
+				}
+				else if (slide == 8)
+				{
+					document.getElementById("us-hearts").style.display = "none";
+					document.getElementById("us").style.display = "";
+					document.getElementById("next").style.display = "none";
+					document.getElementById("text-8").style.display = "none";
+					document.getElementById("text-9a").style.display = "";
+					document.getElementById("text-9b").style.display = "";
+					document.getElementById("break1").style.display = "none";
+					document.getElementById("break2").style.display = "none";
+				}
+				else
+				{
+					alert("error");
+				}
+			}
+			
+			function Restart()
+			{
+				slide = 1;
+				document.getElementById("me").style.display = "";
+				document.getElementById("me-sad").style.display = "none";
+				document.getElementById("me-happy").style.display = "none";
+				document.getElementById("scout").style.display = "none";
+				document.getElementById("us").style.display = "none";
+				document.getElementById("us-kiss").style.display = "none";
+				document.getElementById("us-hearts").style.display = "none";
+				document.getElementById("text-1").style.display = "";
+				document.getElementById("text-2").style.display = "none";
+				document.getElementById("text-3").style.display = "none";
+				document.getElementById("text-4").style.display = "none";
+				document.getElementById("text-5").style.display = "none";
+				document.getElementById("text-6").style.display = "none";
+				document.getElementById("text-7").style.display = "none";
+				document.getElementById("text-8").style.display = "none";
+				document.getElementById("text-9a").style.display = "none";
+				document.getElementById("text-9b").style.display = "none";
+				document.getElementById("next").style.display = "";
+				document.getElementById("break1").style.display = "";
+				document.getElementById("break2").style.display = "";
+			}
+		</script>
+	</body>
+</html>

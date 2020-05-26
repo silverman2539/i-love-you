@@ -1,0 +1,208 @@
+<html>
+	<head>
+		<title>Button #8</title>
+		<style>
+			body
+			{
+				background: linear-gradient(to bottom right, #FFAFAF 0%, moccasin 20%, lemonchiffon 40%, #B7FFB7 60%, lightblue 80%, #DDBBF1 100%);
+				color: mediumvioletred;
+				font-size: 30;
+				text-align: center;
+				padding: 25;
+				border-style: double;
+				border-color: mediumvioletred;
+			}
+			hr
+			{
+				border-style: none;
+				border-top-style: solid;
+				color: mediumvioletred;
+			}
+			button
+			{
+				color: mediumvioletred;
+				border-color: mediumvioletred;
+				border-style: solid;
+				font-size: 20;
+				width: 75;
+				height: 50;
+				background-color: #FFDFEA;
+			}
+			button:hover
+			{
+				transition: 0.5s;
+				opacity: 75%;
+				background: none;
+			}
+			div
+			{
+				display: inline-block;
+				border-style: solid;
+				border-width: thin;
+				background-color: white;
+				padding: 50;
+				padding-bottom: 25;
+				font-size: 20;
+			}
+			img
+			{
+				height: 300;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<p>Button #8</p>
+		<hr>
+		<button id="start" onclick="Start()">Start</button>
+		<div id="slides" style="display:none;">
+			<img id="gerard" src="gerard.jpg">
+			<img id="frank" src="frank.jpg" style="display:none;">
+			<img id="mikey" src="mikey.jpg" style="display:none;">
+			<img id="pete" src="pete.jpg" style="display:none;">
+			<img id="brendon" src="brendon.png" style="display:none;">
+			<img id="ryan" src="ryan.jpg" style="display:none;">
+			<p id="text-1">This is Gerard</p>
+			<p id="text-2" style="display:none;">This is Frank</p>
+			<p id="text-3a" style="display:none;">They're gay for each other</p>
+			<p id="text-3b" style="display:none;">But it's a secret</p>
+			<p id="text-3c" style="display:none;">Except it's not very secret</p>
+			<p id="text-4" style="display:none;">This is Mikey</p>
+			<p id="text-5" style="display:none;">This is Pete</p>
+			<p id="text-6" style="display:none;">They're also gay for each other</p>
+			<p id="text-7" style="display:none;">This is Brendon</p>
+			<p id="text-8" style="display:none;">This is Ryan</p>
+			<p id="text-9a" style="display:none;">They're also gay for each other</p>
+			<p id="text-9b" style="display:none;">They just don't wanna admit it</p>
+			<p id="text-10a" style="display:none;">That's it</p>
+			<p id="text-10b" style="display:none;">I just wanted to remind you</p>
+			<br><br>
+			<button id="next" onclick="Next()">Next</button>
+			<br id="break1"><br id="break2">
+			<button id="restart" onclick="Restart()" style="width:100;">Restart</button>
+		</div>
+		<br><br>
+		<button onclick="document.location = 'index.html'">Back</button>
+		
+		<script>
+			var slide = 0;
+			
+			function Start()
+			{
+				document.getElementById("start").style.display = "none";
+				document.getElementById("slides").style.display = "";
+				slide = 1;
+			}
+			
+			function Next()
+			{
+				if (slide == 1)
+				{
+					slide = 2;
+					document.getElementById("frank").style.display = "";
+					document.getElementById("text-1").style.display = "none";
+					document.getElementById("text-2").style.display = "";
+				}
+				else if (slide == 2)
+				{
+					slide = 3;
+					document.getElementById("text-2").style.display = "none";
+					document.getElementById("text-3a").style.display = "";
+					document.getElementById("text-3b").style.display = "";
+					document.getElementById("text-3c").style.display = "";
+				}
+				else if (slide == 3)
+				{
+					slide = 4;
+					document.getElementById("gerard").style.display = "none";
+					document.getElementById("frank").style.display = "none";
+					document.getElementById("mikey").style.display = "";
+					document.getElementById("text-3a").style.display = "none";
+					document.getElementById("text-3b").style.display = "none";
+					document.getElementById("text-3c").style.display = "none";
+					document.getElementById("text-4").style.display = "";
+				}
+				else if (slide == 4)
+				{
+					slide = 5;
+					document.getElementById("pete").style.display = "";
+					document.getElementById("text-4").style.display = "none";
+					document.getElementById("text-5").style.display = "";
+				}
+				else if (slide == 5)
+				{
+					slide = 6;
+					document.getElementById("text-5").style.display = "none";
+					document.getElementById("text-6").style.display = "";
+				}
+				else if (slide == 6)
+				{
+					slide = 7;
+					document.getElementById("mikey").style.display = "none";
+					document.getElementById("pete").style.display = "none";
+					document.getElementById("brendon").style.display = "";
+					document.getElementById("text-6").style.display = "none";
+					document.getElementById("text-7").style.display = "";
+				}
+				else if (slide == 7)
+				{
+					slide = 8;
+					document.getElementById("ryan").style.display = "";
+					document.getElementById("text-7").style.display = "none";
+					document.getElementById("text-8").style.display = "";
+				}
+				else if (slide == 8)
+				{
+					slide = 9;
+					document.getElementById("text-8").style.display = "none";
+					document.getElementById("text-9a").style.display = "";
+					document.getElementById("text-9b").style.display = "";
+				}
+				else if (slide == 9)
+				{
+					document.getElementById("gerard").style.display = "";
+					document.getElementById("frank").style.display = "";
+					document.getElementById("mikey").style.display = "";
+					document.getElementById("pete").style.display = "";
+					document.getElementById("text-9a").style.display = "none";
+					document.getElementById("text-9b").style.display = "none";
+					document.getElementById("text-10a").style.display = "";
+					document.getElementById("text-10b").style.display = "";
+					document.getElementById("break1").style.display = "none";
+					document.getElementById("break2").style.display = "none";
+					document.getElementById("next").style.display = "none";
+				}
+				else
+				{
+					alert("error");
+				}
+			}
+			
+			function Restart()
+			{
+				slide = 1;
+				document.getElementById("gerard").style.display = "";
+				document.getElementById("frank").style.display = "none";
+				document.getElementById("mikey").style.display = "none";
+				document.getElementById("pete").style.display = "none";
+				document.getElementById("text-1").style.display = "";
+				document.getElementById("text-2").style.display = "none";
+				document.getElementById("text-3a").style.display = "none";
+				document.getElementById("text-3b").style.display = "none";
+				document.getElementById("text-3c").style.display = "none";
+				document.getElementById("text-4").style.display = "none";
+				document.getElementById("text-5").style.display = "none";
+				document.getElementById("text-6").style.display = "none";
+				document.getElementById("text-7").style.display = "none";
+				document.getElementById("text-8").style.display = "none";
+				document.getElementById("text-9a").style.display = "none";
+				document.getElementById("text-9b").style.display = "none";
+				document.getElementById("text-10a").style.display = "none";
+				document.getElementById("text-10b").style.display = "none";
+				document.getElementById("next").style.display = "";
+				document.getElementById("break1").style.display = "";
+				document.getElementById("break2").style.display = "";
+			}
+		</script>
+	</body>
+</html>
